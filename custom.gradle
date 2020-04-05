@@ -1,13 +1,27 @@
+buildscript {
+    ext {
+        kotlin_version = "1.2.0"
+        springBootVersion = "2.2.5.RELEASE"
+
+        commonDependencies = [
+                kotlinStdLib      : "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version",
+                rxJava            : 'io.reactivex.rxjava2:rxjava:2.1.6',
+                espressoCore      : 'com.android.support.test.espresso:espresso-core:2.2.2',
+        ]
+    }
+    repositories {
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath "org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}"
+    }
+}
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version "${springBootVersion}"
+    id 'io.spring.dependency-management' version '1.0.8.RELEASE'
+}
 task dependencyTask {
     println "Passport Starter Dependency Task!"
-}
-ext {
-    kotlin_version = "1.2.0"
-    springBootVersion = "2.2.5.RELEASE"
-
-    commonDependencies = [            
-            kotlinStdLib      : "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version",
-            rxJava            : 'io.reactivex.rxjava2:rxjava:2.1.6',
-            espressoCore      : 'com.android.support.test.espresso:espresso-core:2.2.2',
-    ]
 }
