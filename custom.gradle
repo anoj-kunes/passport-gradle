@@ -9,12 +9,12 @@ buildscript {
                 espressoCore      : 'com.android.support.test.espresso:espresso-core:2.2.2',
         ]
     }
-    repositories {
-        mavenCentral()
-    }
-
     dependencies {
         classpath "org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}"
+        classpath 'org.owasp:dependency-check-gradle:5.3.0'
+    }
+    repositories {
+        mavenCentral()
     }
 }
 plugins {
