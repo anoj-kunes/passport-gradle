@@ -18,7 +18,6 @@ buildscript {
         mavenCentral()
     }
 }
-apply plugin: "org.springframework.boot"
 task dependencyTask {
     println "Passport Starter Dependency Task!"
 }
