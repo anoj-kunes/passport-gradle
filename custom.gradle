@@ -2,12 +2,6 @@ task dependencyTask {
     println "Passport Starter Dependency Task!"
 }
 
-allprojects {
-    plugins {
-        id 'org.springframework.boot' version '2.2.5.RELEASE'
-    }
-}
-
 ext {
     kotlin_version = "1.2.0"
 
