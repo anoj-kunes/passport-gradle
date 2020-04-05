@@ -18,4 +18,3 @@ buildscript {
         mavenCentral()
     }
 }
-apply plugin: "org.springframework.boot.gradle.plugin.SpringBootPlugin"
