@@ -4,7 +4,7 @@ ext {
         springBootManagement: "1.0.9.RELEASE",
         unbrokenDome: "2.2.1",
         puppyCheckStyle: "8.23",
-        gradle: "5.3.0"
+        gradleCheck: "5.3.0"
     ]
 
     projectSpringPlugins = [
