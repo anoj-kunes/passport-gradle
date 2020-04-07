@@ -1,7 +1,48 @@
 ext {
-    springBootVersion = "2.2.5.RELEASE"
+    projectSpringVersions = [
+        springBoot: "2.2.5.RELEASE",
+        springBootManagement: "1.0.9.RELEASE",
+        unbrokenDome: "2.2.1",
+        puppyCheckStyle: "8.23",
+        gradle: "5.3.0"
+    ]
+
+    projectSpringPlugins = [
+        springBoot: "org.springframework.boot",
+        springBootManagement: "io.spring.dependency-management",
+        unbrokenDome: "org.unbroken-dome.test-sets"
+    ]
+
+    gradleDependency = "org.owasp:dependency-check-gradle:${projectSpringVersions.gradle}"
+
+    mainDependencies = [
+            puppyCheckStyle: "com.puppycrawl.tools:checkstyle:${projectSpringVersions.puppyCheckStyle}",
+            springBootStarter: "org.springframework.boot:spring-boot-starter",
+            lombok: "org.projectlombok:lombok:1.18.6",
+            springBootActuator: "org.springframework.boot:spring-boot-starter-actuator:${projectSpringVersions.springBoot}",
+            springBootDataJpa: "org.springframework.boot:spring-boot-starter-data-jpa",
+            springBootWeb: "org.springframework.boot:spring-boot-starter-web",
+            springBootUnderTow: "org.springframework.boot:spring-boot-starter-undertow",
+            springBootKafka: "org.springframework.kafka:spring-kafka",
+            kafkaClientOverride: "org.apache.kafka:kafka-clients:2.4.0",
+            springBootSecurity: "org.springframework.boot:spring-boot-starter-security",
+            keycloakSecurityStarter: "org.keycloak:keycloak-spring-boot-starter:7.0.1",
+            commonsLang: "org.apache.commons:commons-lang3:3.9",
+            bouncyCastleKeyCloakOverride: "org.bouncycastle:bcprov-jdk15on:1.47",
+            springFoxSwagger: "io.springfox:springfox-swagger2:2.9.2",
+            springFoxSwaggerUi: "io.springfox:springfox-swagger-ui:2.9.2"
+    ]
+
+    dbDependencies = [
+            h2: "com.h2database:h2",
+            mysql: "mysql:mysql-connector-java:8.0.19"
+    ]
 
     testDependencies = [
-
+            springBootSecurity: "org.springframework.security:spring-security-test",
+            spockCoreGroovy: "org.spockframework:spock-core:1.3-groovy-2.5",
+            spockSpringGroovy: "org.spockframework:spock-core:1.3-groovy-2.5",
+            groovy: 'org.codehaus.groovy:groovy-all:3.0.1',
+            cglibNodeP: "cglib:cglib-nodep:3.3.0"
     ]
 }
