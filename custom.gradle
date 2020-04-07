@@ -6,11 +6,9 @@ ext {
     puppyCheckStyleVersion = "8.23"
     unbrokenDomeVersion = "2.2.1"
 
-    projectSpringPlugins = [
-        springBoot: "org.springframework.boot",
-        springBootManagement: "io.spring.dependency-management",
-        unbrokenDome: "org.unbroken-dome.test-sets"
-    ]
+    springBootPlugin = "org.springframework.boot"
+    springBootManagementPlugin = "io.spring.dependency-management"
+    unbrokenDomePlugin = "org.unbroken-dome.test-sets"
 
     gradleDependency = "org.owasp:dependency-check-gradle:${gradleCheckVersion}"
 
