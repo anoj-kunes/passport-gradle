@@ -1,11 +1,10 @@
 ext {
-    projectSpringVersions = [
-        springBoot: "2.2.5.RELEASE",
-        springBootManagement: "1.0.9.RELEASE",
-        unbrokenDome: "2.2.1",
-        puppyCheckStyle: "8.23",
-        gradleCheck: "5.3.0"
-    ]
+
+    springBootVersion = "2.2.5.RELEASE"
+    springBootManagement = "1.0.9.RELEASE"
+    gradleCheckVersion = "5.3.0"
+    puppyCheckStyleVersion = "8.23"
+    unbrokenDomeVersion = "2.2.1"
 
     projectSpringPlugins = [
         springBoot: "org.springframework.boot",
@@ -13,13 +12,13 @@ ext {
         unbrokenDome: "org.unbroken-dome.test-sets"
     ]
 
-    gradleDependency = "org.owasp:dependency-check-gradle:${projectSpringVersions.gradle}"
+    gradleDependency = "org.owasp:dependency-check-gradle:${gradleCheckVersion}"
 
     mainDependencies = [
-            puppyCheckStyle: "com.puppycrawl.tools:checkstyle:${projectSpringVersions.puppyCheckStyle}",
+            puppyCheckStyle: "com.puppycrawl.tools:checkstyle:${puppyCheckStyleVersion}",
             springBootStarter: "org.springframework.boot:spring-boot-starter",
             lombok: "org.projectlombok:lombok:1.18.6",
-            springBootActuator: "org.springframework.boot:spring-boot-starter-actuator:${projectSpringVersions.springBoot}",
+            springBootActuator: "org.springframework.boot:spring-boot-starter-actuator:${springBootVersion}",
             springBootDataJpa: "org.springframework.boot:spring-boot-starter-data-jpa",
             springBootWeb: "org.springframework.boot:spring-boot-starter-web",
             springBootUnderTow: "org.springframework.boot:spring-boot-starter-undertow",
