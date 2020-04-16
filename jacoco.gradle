@@ -23,6 +23,9 @@ jacocoTestCoverageVerification {
     }
 }
 
+test.jacoco.enabled = true
+mockTest.jacoco.enabled = true
+
 jacocoTestReport.executionData(mockTest, test)
 jacocoTestCoverageVerification.executionData(mockTest, test)
 check.dependsOn jacocoTestReport
