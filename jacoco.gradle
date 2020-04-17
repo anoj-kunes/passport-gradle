@@ -23,11 +23,11 @@ jacocoTestCoverageVerification {
     }
 }
 
-// test.jacoco.enabled = true
-// mockTest.jacoco.enabled = true
+test.jacoco.enabled = true
+mockTest.jacoco.enabled = true
 
-jacocoTestReport.executionData(testTasks)
-jacocoTestCoverageVerification.executionData(testTasks)
+jacocoTestReport.executionData(mockTest, test)
+jacocoTestCoverageVerification.executionData(mockTest, test)
 check.dependsOn jacocoTestReport
 jacocoTestReport.mustRunAfter mockTest
 check.dependsOn jacocoTestCoverageVerification
