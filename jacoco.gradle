@@ -26,7 +26,7 @@ jacocoTestCoverageVerification {
 //test.jacoco.enabled = true
 //mockTest.jacoco.enabled = true
 
-ext.jacocoTasks = { (tests) ->
+ext.jacocoTasks = { tests ->
     jacocoTestReport.executionData(tests)
     jacocoTestCoverageVerification.executionData(tests)
     check.dependsOn jacocoTestReport
