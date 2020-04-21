@@ -23,6 +23,18 @@ jacocoTestCoverageVerification {
     }
 }
 
+if (project.hasProperty('jacocoExclusion') && jacocoExclusion != null && !jacocoExclusion.isEmpty() ) {
+    [jacocoTestCoverageVerification, jacocoTestReport].each { item ->
+        afterEvaluate {
+            item.classDirectories.from = files(item.classDirectories.files.collect {
+                fileTree(
+                        dir: it,
+                        exclude: jacocoExclusion)
+            })
+        }
+    }
+}
+
 ext.jacocoTasks = { Task... tests ->
     jacocoTestReport.executionData(tests)
     jacocoTestCoverageVerification.executionData(tests)
@@ -31,3 +43,4 @@ ext.jacocoTasks = { Task... tests ->
     check.dependsOn jacocoTestCoverageVerification
     jacocoTestCoverageVerification.mustRunAfter jacocoTestReport
 }
+
