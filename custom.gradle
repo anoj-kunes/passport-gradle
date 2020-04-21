@@ -35,6 +35,10 @@ ext {
             mysql: "mysql:mysql-connector-java:8.0.19"
     ]
 
+    migrationDependencies = [
+
+    ]
+
     testDependencies = [
             springBootSecurity: "org.springframework.security:spring-security-test",
             spockCoreGroovy: "org.spockframework:spock-core:1.3-groovy-2.5",
@@ -42,4 +46,17 @@ ext {
             groovy: 'org.codehaus.groovy:groovy-all:3.0.1',
             cglibNodeP: "cglib:cglib-nodep:3.3.0"
     ]
+}
+
+ext.commonTestDependencies = {
+    dependencies {
+        testImplementation('org.springframework.boot:spring-boot-starter-test') {
+            exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
+        }
+        testImplementation "org.springframework.security:spring-security-test"
+        testImplementation 'org.spockframework:spock-core:1.3-groovy-2.5'
+        testImplementation 'org.spockframework:spock-spring:1.3-groovy-2.5'
+        testImplementation 'org.codehaus.groovy:groovy-all:3.0.1'
+        testImplementation 'cglib:cglib-nodep:3.3.0'
+    }
 }
